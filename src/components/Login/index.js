@@ -52,7 +52,7 @@ class Login extends Component {
         localStorage.setItem('current_user', JSON.stringify(currentUser[0]))
         const {history} = this.props
 
-        history.replace('/todo')
+        history.replace('/')
       } else {
         this.setState({
           isError: true,
@@ -117,7 +117,7 @@ class Login extends Component {
     const passwordType = passwordHide ? 'password' : 'text'
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
-      return <Redirect to="/todo" />
+      return <Redirect to="/" />
     }
 
     return (
