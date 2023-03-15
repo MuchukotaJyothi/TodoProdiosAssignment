@@ -1,0 +1,120 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: ;
+}
+
+.sign-in-btn {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  background-color: #0b69ff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.pass-img-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d7dfe9;
+  color: #64748b;
+  border-radius: 5px;
+  height: 32px;
+  width: 320px;
+  padding: 8px 16px 8px 16px;
+  margin-top: 4px;
+}
+
+.password-input {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  color: #64748b;
+}
+
+.eye-img-btn {
+  background-color: #ffffff;
+  border-width: 0px;
+}
+
+.user-input {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  color: #64748b;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  width: 320px;
+  height: 32px;
+  font-family: roboto;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.email-container {
+  margin-top: 10px;
+}
+
+.input-label-login {
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  color: #475569;
+}
+
+.eye-img {
+  height: 20px;
+}
+
+.main-para {
+  text-align: center;
+  color: #0b3558;
+  font-family: Roboto;
+}
+
+.main-heading {
+  color: #0b3558;
+  font-family: Roboto;
+  font-size: 34px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.login-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 90%;
+  max-width: 1110px;
+  margin: auto;
+}
+
+.error-msg {
+  color: #d9292b;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.email-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
