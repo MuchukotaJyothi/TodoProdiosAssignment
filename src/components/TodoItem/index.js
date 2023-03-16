@@ -22,6 +22,7 @@ const TodoItem = props => {
         id={id}
         onChange={onChangeInput}
         className="checkbox-input"
+        checked={isCompleted}
       />
       <div className="label-container">
         <label htmlFor={id} className={`label-text ${classLabel}`}>

@@ -7,36 +7,37 @@ import TodoItem from '../TodoItem'
 import './index.css'
 
 class Todo extends Component {
-  state = {userInput: '', todoList: []}
+  state = {userInput: ''}
 
   toggleIsCompleted = id => {
-    this.setState(prevState => ({
-      todoList: prevState.todoList.map(eachTodo => {
-        if (id === eachTodo.id) {
-          return {...eachTodo, isCompleted: !eachTodo.isCompleted}
-        }
-        return eachTodo
-      }),
-    }))
+    const todoList = JSON.parse(localStorage.getItem('todo_list'))
+    const updated = todoList.map(eachTodo => {
+      if (eachTodo.id === id) {
+        return {...eachTodo, isCompleted: !eachTodo.isCompleted}
+      }
+      return eachTodo
+    })
+    localStorage.setItem('todo_list', JSON.stringify(updated))
+    this.setState({userInput: ''})
   }
 
   onDeleteTodo = id => {
-    const {todoList} = this.state
+    const todoList = JSON.parse(localStorage.getItem('todo_list'))
     const updatedTodoList = todoList.filter(eachTodo => eachTodo.id !== id)
-    this.setState({todoList: updatedTodoList})
+    localStorage.setItem('todo_list', JSON.stringify(updatedTodoList))
+    this.setState({userInput: ''})
   }
 
   onClickAddBtn = () => {
     const {userInput} = this.state
+    const todo = JSON.parse(localStorage.getItem('todo_list'))
     const newTodo = {
       id: v4(),
       text: userInput,
       isCompleted: false,
     }
-    this.setState(prevState => ({
-      todoList: [...prevState.todoList, newTodo],
-      userInput: '',
-    }))
+    localStorage.setItem('todo_list', JSON.stringify([...todo, newTodo]))
+    this.setState({userInput: ''})
   }
 
   onChangeTodo = event => {
@@ -50,7 +51,10 @@ class Todo extends Component {
   }
 
   render() {
-    const {userInput, todoList} = this.state
+    const {userInput} = this.state
+    const todoList = JSON.parse(localStorage.getItem('todo_list'))
+
+    console.log(todoList)
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken === undefined) {
       return <Redirect to="/todo/login" />
